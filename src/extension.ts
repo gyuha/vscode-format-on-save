@@ -7,25 +7,24 @@ import * as vscode from 'vscode';
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-    let onFormat: boolean = vscode.workspace.getConfiguration('format-on-save')['on'];
-    let extensions: string[] = vscode.workspace.getConfiguration('format-on-save')['extentions'];
+    vscode.workspace.onDidSaveTextDocument((document: vscode.TextDocument) => {
+        var onFormat: boolean = vscode.workspace.getConfiguration('formatOnSave')['on'];
+        if (onFormat != true) {
+            return;
+        }
+        var extensions: string[] = vscode.workspace.getConfiguration('formatOnSave')['extentions'];
 
-    if (onFormat) {
-        vscode.workspace.onDidSaveTextDocument((document: vscode.TextDocument) => {
-            for (var i = 0; i < extensions.length; i++) {
-                console.log(extensions[i]);
-                var pattern: string = "." + extensions[i] + "$";
-                var match = pattern.length > 0 && new RegExp(pattern).test(document.fileName);
-                if (match) {
-                    console.log(i);
-                    vscode.commands.executeCommand('editor.action.trimTrailingWhitespace');
-                    vscode.commands.executeCommand('editor.action.format')
-                    vscode.window.activeTextEditor.document.save();
-                    return;
-                }
+        for (var i = 0; i < extensions.length; i++) {
+            var pattern: string = "." + extensions[i] + "$";
+            var match = pattern.length > 0 && new RegExp(pattern).test(document.fileName);
+            if (match) {
+                vscode.commands.executeCommand('editor.action.trimTrailingWhitespace');
+                vscode.commands.executeCommand('editor.action.format')
+                vscode.window.activeTextEditor.document.save();
+                return;
             }
-        });
-    }
+        }
+    });
 }
 
 // this method is called when your extension is deactivated
