@@ -10,6 +10,15 @@ Settings:
     /* Format on save using */
     "formatOnSave.on": true,
     /* The extensions array which will apply */
-    "formatOnSave.extensions": ["*"],
+    "formatOnSave.extensions": ["*"]
+}
+```
+
+Other example
+
+```js
+{
+    "formatOnSave": true,
+    "formatOnSave.extensions": ["js", "java", "php"]
 }
 ```
