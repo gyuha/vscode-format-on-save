@@ -1,22 +1,22 @@
 {
     "name": "format-on-save",
     "displayName": "Format on Save",
-"description": "Enables auto formatting of the code when you save a file. ",
-"version": "0.0.4",
-"publisher": "gyuha",
-"engines": {
-"vscode": "^1.0.0"
-},
-"repository": {
-"url": "https://github.com/gyuha/vscode-format-on-save",
-"type": "git"
-},
-"categories": [
-"Other"
-],
-"activationEvents": [
-"*"
-],
+    "description": "Enables auto formatting of the code when you save a file. ",
+    "version": "0.0.4",
+    "publisher": "gyuha",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "repository": {
+        "url": "https://github.com/gyuha/vscode-format-on-save",
+        "type": "git"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
     "main": "./out/src/extension",
     "contributes": {
         "configuration": {
