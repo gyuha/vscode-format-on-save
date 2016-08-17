@@ -1,0 +1,45 @@
+{
+    "name": "format-on-save",
+    "displayName": "Format on Save",
+    "description": "Enables auto formatting of the code when you save a file. ",
+    "version": "0.0.1",
+    "publisher": "gyuha",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "configuration": {
+            "title": "Format on Save confiiguration",
+            "properties": {
+                "format-on-save.on": {
+                    "type": "boolean",
+                    "default": "false",
+                    "description": "Automatically format on save"
+                },
+                "format-on-save.extentions": {
+                    "type": "array",
+                    "default": [
+                        "*"
+                    ],
+                    "description": "Automaticall save filter"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0"
+    }
+}
