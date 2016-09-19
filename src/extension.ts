@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
         if (onFormat != true) {
             return;
         }
-        var extensions: string[] = vscode.workspace.getConfiguration('formatOnSave')['extentions'];
+        var extensions: string[] = vscode.workspace.getConfiguration('formatOnSave')['extensions'];
 
         for (var i = 0; i < extensions.length; i++) {
             var pattern: string = "." + extensions[i] + "$";
