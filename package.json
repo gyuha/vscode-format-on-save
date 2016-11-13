@@ -2,7 +2,7 @@
     "name": "format-on-save",
     "displayName": "Format on Save",
     "description": "Enables auto formatting of the code when you save a file. ",
-    "version": "0.0.8",
+    "version": "0.0.10",
     "publisher": "gyuha",
     "engines": {
         "vscode": "^1.0.0"

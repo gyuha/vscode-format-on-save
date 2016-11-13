@@ -18,7 +18,20 @@ Other example
 
 ```js
 {
-    "formatOnSave": true,
+    "formatOnSave.on": true,
     "formatOnSave.extensions": ["js", "java", "php"]
 }
 ```
+
+# Build
+
+    git clone https://github.com/gyuha/vscode-format-on-save 
+    npm install
+    npm install -g vsce
+    vsce publish
+
+# Reference
+
+* [Extending Visual Studio Code](https://code.visualstudio.com/docs/extensions/overview)
+* [A walkthrough of creating an extension for VS Code](https://github.com/hoovercj/vscode-extension-tutorial)
+* [Vscode publish extension](https://marketplace.visualstudio.com/manage)

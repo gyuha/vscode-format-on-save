@@ -8,23 +8,24 @@ import * as vscode from 'vscode';
 export function activate(context: vscode.ExtensionContext) {
 
     vscode.workspace.onDidSaveTextDocument((document: vscode.TextDocument) => {
-        var onFormat: boolean = vscode.workspace.getConfiguration('formatOnSave')['on'];
+        let onFormat: boolean = vscode.workspace.getConfiguration('formatOnSave')['on'];
         if (onFormat != true) {
             return;
         }
-        var extensions: string[] = vscode.workspace.getConfiguration('formatOnSave')['extensions'];
 
-        for (var i = 0; i < extensions.length; i++) {
-            var pattern: string = "." + extensions[i] + "$";
-            var match = pattern.length > 0 && new RegExp(pattern).test(document.fileName);
+        let extensions: string[] = vscode.workspace.getConfiguration('formatOnSave')['extensions'];
+
+        for (let i = 0; i < extensions.length; i++) {
+            let pattern: string = "." + extensions[i] + "$";
+            let match = pattern.length > 0 && new RegExp(pattern).test(document.fileName);
             if (match) {
                 vscode.commands.executeCommand('editor.action.trimTrailingWhitespace');
-                vscode.commands.executeCommand('editor.action.format')
+                vscode.commands.executeCommand('editor.action.formatDocument')
                 vscode.window.activeTextEditor.document.save();
                 return;
             }
         }
-    });
+  });
 }
 
 // this method is called when your extension is deactivated
