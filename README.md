@@ -35,3 +35,5 @@ Other example
 * [Extending Visual Studio Code](https://code.visualstudio.com/docs/extensions/overview)
 * [A walkthrough of creating an extension for VS Code](https://github.com/hoovercj/vscode-extension-tutorial)
 * [Vscode publish extension](https://marketplace.visualstudio.com/manage)
+* [vsce - Publishing Tool Reference](https://code.visualstudio.com/docs/tools/vscecli)
+* [vscode namespace API](https://code.visualstudio.com/docs/extensionAPI/vscode-api)
