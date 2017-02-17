@@ -1,3 +1,5 @@
+[As of September 2016 (vscode 1.6)](http://stackoverflow.com/questions/39494277/how-do-you-format-code-on-save-in-vs-code), this functionality is now officially supported, deprecating the need for this extension.
+
 # Format on Save for VS Code
 
 Enables auto formatting of the code when you save a file.
